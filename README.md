@@ -86,23 +86,22 @@ For detailed usage, please refer to [Example](https://github.com/aecc-dev-souvik
 If your tabs component is **react-native-scrollable-tab-view**
 
 ```js
-import * as React from "react";
-import { View } from "react-native";
-import { HScrollView } from "react-native-header-tab-view";
-import { CollapsibleHeaderTabView } from "react-native-scrollable-tab-view-collapsible-head";
+import * as React from 'react';
+import {View} from 'react-native';
+import {HScrollView} from 'react-native-header-tab-view';
+import {CollapsibleHeaderTabView} from 'react-native-scrollable-tab-view-collapsible-head';
 export default class ExampleBasic extends React.PureComponent<any> {
   render() {
     return (
       <CollapsibleHeaderTabView
         renderScrollHeader={() => (
-          <View style={{ height: 200, backgroundColor: "red" }} />
-        )}
-      >
+          <View style={{height: 200, backgroundColor: 'red'}} />
+        )}>
         <HScrollView index={0}>
-          <View style={{ height: 1000, backgroundColor: "#ff4081" }} />
+          <View style={{height: 1000, backgroundColor: '#ff4081'}} />
         </HScrollView>
         <HScrollView index={1}>
-          <View style={{ height: 1000, backgroundColor: "#673ab7" }} />
+          <View style={{height: 1000, backgroundColor: '#673ab7'}} />
         </HScrollView>
       </CollapsibleHeaderTabView>
     );
@@ -113,31 +112,31 @@ export default class ExampleBasic extends React.PureComponent<any> {
 If your tabs component is **react-native-tab-view**
 
 ```js
-import * as React from "react";
-import { View, StyleSheet, Dimensions } from "react-native";
-import { SceneMap } from "react-native-tab-view";
-import { HScrollView } from "react-native-header-tab-view";
-import { CollapsibleHeaderTabView } from "react-native-tab-view-collapsible-head";
+import * as React from 'react';
+import {View, StyleSheet, Dimensions} from 'react-native';
+import {SceneMap} from 'react-native-tab-view';
+import {HScrollView} from 'react-native-header-tab-view';
+import {CollapsibleHeaderTabView} from 'react-native-tab-view-collapsible-head';
 
 const FirstRoute = () => (
   <HScrollView index={0}>
-    <View style={[styles.scene, { backgroundColor: "#ff4081" }]} />
+    <View style={[styles.scene, {backgroundColor: '#ff4081'}]} />
   </HScrollView>
 );
 
 const SecondRoute = () => (
   <HScrollView index={1}>
-    <View style={[styles.scene, { backgroundColor: "#673ab7" }]} />
+    <View style={[styles.scene, {backgroundColor: '#673ab7'}]} />
   </HScrollView>
 );
 
-const initialLayout = { width: Dimensions.get("window").width };
+const initialLayout = {width: Dimensions.get('window').width};
 
 export default function TabViewExample() {
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
-    { key: "first", title: "First" },
-    { key: "second", title: "Second" },
+    {key: 'first', title: 'First'},
+    {key: 'second', title: 'Second'},
   ]);
 
   const renderScene = SceneMap({
@@ -148,9 +147,9 @@ export default function TabViewExample() {
   return (
     <CollapsibleHeaderTabView
       renderScrollHeader={() => (
-        <View style={{ height: 200, backgroundColor: "red" }} />
+        <View style={{height: 200, backgroundColor: 'red'}} />
       )}
-      navigationState={{ index, routes }}
+      navigationState={{index, routes}}
       renderScene={renderScene}
       onIndexChange={setIndex}
       initialLayout={initialLayout}
@@ -226,7 +225,7 @@ yarn add react-native-tab-view-collapsible-header
 > You need to add [this dependency library](https://github.com/aecc-dev-souvik/react-native-tab-view-collapsible-head)
 >
 > ```js
-> import { CollapsibleHeaderTabView } from "react-native-scrollable-tab-view-collapsible-head";
+> import {CollapsibleHeaderTabView} from 'react-native-scrollable-tab-view-collapsible-head';
 > ```
 
 ````
@@ -272,7 +271,7 @@ Gets the animation value of the shared collapsible header.
 ```js
 <CollapsibleHeaderTabView
   makeScrollTrans={(scrollValue) => {
-    this.setState({ scrollValue });
+    this.setState({scrollValue});
   }}
 />
 ```
